@@ -326,3 +326,23 @@
   height: 3px;
   background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.9) 0%, rgba(56, 189, 248, 0) 80%);
 }
+
+/* ========================================================
+   NAVBAR RESPONSIVENESS
+   ======================================================== */
+.nav-desktop-links {
+  display: none !important;
+}
+
+.nav-mobile-toggle {
+  display: inline-flex !important;
+}
+
+@media (min-width: 768px) {
+  .nav-desktop-links {
+    display: flex !important;
+  }
+  .nav-mobile-toggle {
+    display: none !important;
+  }
+}

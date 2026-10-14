@@ -9,6 +9,7 @@ import { Projects } from './sections/Projects';
 import { Experience } from './sections/Experience';
 import { Contact } from './sections/Contact';
 import { Footer } from './components/Footer';
+import { AudioPlayer } from './components/AudioPlayer';
 
 export const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>('hero');
@@ -59,6 +60,9 @@ export const App: React.FC = () => {
         <Experience />
         <Contact profile={profileData} />
       </main>
+
+      {/* Ambient Audio Player */}
+      <AudioPlayer />
 
       {/* Aero Glass Footer */}
       <Footer />

@@ -280,17 +280,6 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, githubUrl }) => {
         </div>
       )}
 
-      {/* Inline styles for media query responsiveness */}
-      <style>{`
-        @media (min-width: 768px) {
-          .nav-desktop-links {
-            display: flex !important;
-          }
-          .nav-mobile-toggle {
-            display: none !important;
-          }
-        }
-      `}</style>
     </header>
   );
 };

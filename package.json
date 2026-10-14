@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "build:gh": "tsc && vite build --base=/portif-lio/",
+    "build:docs": "tsc && vite build --base=/portif-lio/ --outDir=docs",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "predeploy": "npm run build:gh",

@@ -129,26 +129,47 @@ Cada projeto listado no portfólio possui os seguintes campos:
 
 ---
 
-## 7. Publicação no GitHub Pages via GitHub Actions
+## 7. Publicação no GitHub Pages
 
-O projeto já inclui o workflow oficial do GitHub Actions em `.github/workflows/deploy.yml`.
+O projeto oferece duas opções de deploy: **Deploy direto por branch (`gh-pages`)** (recomendado se sua conta tiver restrições no Actions) ou **Deploy automatizado via GitHub Actions**.
 
-### Como Ativar o Deploy Automático:
+### Opção A: Deploy Rápido por Branch `gh-pages` (100% Grátis, Sem consumo de Actions)
+
+Esta opção é ideal caso sua conta do GitHub tenha limites ou bloqueios de billing no GitHub Actions.
+
+1. No seu terminal local, execute:
+   ```powershell
+   npm.cmd run deploy
+   ```
+   *(Esse comando compila o projeto com `--base=/portif-lio/` e publica automaticamente na branch `gh-pages`).*
+
+2. Acesse seu repositório: [https://github.com/Jotaroki/portif-lio](https://github.com/Jotaroki/portif-lio).
+3. Vá em **Settings** > **Pages**.
+4. Em **Build and deployment** > **Source**, selecione:
+   👉 **Deploy from a branch**.
+5. Em **Branch**, selecione **`gh-pages`** e pasta **`/ (root)`**.
+6. Clique em **Save**. Em 1 minuto seu site estará no ar em:
+   **`https://jotaroki.github.io/portif-lio/`**
+
+---
+
+### Opção B: Deploy Automatizado via GitHub Actions
+
+O projeto já inclui o workflow em `.github/workflows/deploy.yml`.
 
 1. Acesse o seu repositório no GitHub: `https://github.com/Jotaroki/portif-lio`.
-2. Clique na aba **Settings** (Configurações).
-3. No menu lateral esquerdo, vá em **Pages**.
-4. Em **Build and deployment** > **Source**, altere a opção de *"Deploy from a branch"* para:
+2. Clique na aba **Settings** > **Pages**.
+3. Em **Build and deployment** > **Source**, selecione:
    👉 **GitHub Actions**.
-5. Faça um commit e push para a branch `main`:
+4. Faça push para a branch `main`:
    ```powershell
    git add .
-   git commit -m "feat: implementar portfolio Frutiger Aero completo"
+   git commit -m "feat: atualizar portfolio"
    git push origin main
    ```
-6. O workflow será executado automaticamente. Você pode acompanhar a execução na aba **Actions** do GitHub.
-7. Ao término, seu portfólio estará online em:
-   **`https://jotaroki.github.io/portif-lio/`**
+5. O workflow compila e publica automaticamente o site.
+
+> **Importante sobre erros de Billing no Actions:** Se você encontrar a mensagem *"The job was not started because your account is locked due to a billing issue"*, isso indica que sua conta GitHub possui pendências em [github.com/settings/billing/summary](https://github.com/settings/billing/summary). A **Opção A** acima contorna isso imediatamente sem custos.
 
 ---
 

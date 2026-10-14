@@ -1,0 +1,135 @@
+/* ========================================================
+   KEYFRAME ANIMATIONS
+   ======================================================== */
+
+/* Slow atmospheric floating for glass bubbles */
+@keyframes floatBubbleSlow {
+  0% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-24px) translateX(12px) rotate(4deg);
+  }
+  66% {
+    transform: translateY(-45px) translateX(-10px) rotate(-3deg);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+}
+
+@keyframes floatBubbleFast {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-30px) translateX(-15px);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+}
+
+/* Button hover glossy sheen sweep */
+@keyframes glossySheen {
+  0% {
+    left: -60%;
+    opacity: 0.1;
+  }
+  40% {
+    opacity: 0.8;
+  }
+  100% {
+    left: 140%;
+    opacity: 0;
+  }
+}
+
+/* Pulsing LED indicator */
+@keyframes ledPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 6px #4ade80, 0 0 12px #22c55e;
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(0.92);
+    box-shadow: 0 0 3px #4ade80, 0 0 6px #22c55e;
+  }
+}
+
+/* Entrance fade and gentle slide */
+@keyframes aeroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Floating animation for decorative badge or orb */
+@keyframes gentleHover {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Ambient sun ray shimmer */
+@keyframes sunRayGlow {
+  0%, 100% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+
+.animate-fade-in {
+  animation: aeroFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-hover {
+  animation: gentleHover 4s ease-in-out infinite;
+}
+
+/* ========================================================
+   REDUCED MOTION PREFERENCE (ACCESSIBILITY)
+   ======================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .bubble-item {
+    animation: none !important;
+  }
+
+  .aero-glass--interactive:hover {
+    transform: none !important;
+  }
+
+  .glossy-btn:hover {
+    transform: none !important;
+  }
+
+  .glossy-btn::after {
+    display: none !important;
+  }
+
+  .aero-led-live {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+}

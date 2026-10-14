@@ -1,0 +1,328 @@
+@import './tokens.css';
+
+/* ========================================================
+   AERO GLASS PANELS & SURFACES
+   ======================================================== */
+.aero-glass {
+  background-color: var(--glass-bg-card);
+  backdrop-filter: blur(var(--blur-medium));
+  -webkit-backdrop-filter: blur(var(--blur-medium));
+  border: 1px solid var(--glass-border-light);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(2, 132, 199, 0.2);
+  border-radius: var(--radius-lg);
+  box-shadow: 
+    var(--shadow-md),
+    var(--glass-specular-top);
+  position: relative;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease;
+}
+
+/* Fallback for browsers without backdrop-filter */
+@supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+  .aero-glass {
+    background-color: var(--glass-fallback-card);
+  }
+  .navbar-glass {
+    background-color: var(--glass-fallback-nav) !important;
+  }
+}
+
+.aero-glass--prominent {
+  background-color: var(--glass-bg-prominent);
+  backdrop-filter: blur(var(--blur-heavy));
+  -webkit-backdrop-filter: blur(var(--blur-heavy));
+  box-shadow: 
+    var(--shadow-lg),
+    var(--glass-specular-full);
+}
+
+.aero-glass--subtle {
+  background-color: var(--glass-bg-subtle);
+  backdrop-filter: blur(var(--blur-light));
+  -webkit-backdrop-filter: blur(var(--blur-light));
+  box-shadow: var(--shadow-sm);
+}
+
+.aero-glass--tint {
+  background-color: var(--glass-bg-tint);
+  border-color: var(--glass-border-glow);
+}
+
+.aero-glass--interactive:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    var(--shadow-lg),
+    0 0 20px rgba(56, 189, 248, 0.3),
+    var(--glass-specular-top);
+  border-color: rgba(255, 255, 255, 1);
+}
+
+/* Internal glass specular gleam strip */
+.aero-glass-glare {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 45%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  pointer-events: none;
+}
+
+/* ========================================================
+   GLOSSY GEL BUTTONS
+   ======================================================== */
+.glossy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.75rem 1.6rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-top: 1.5px solid #ffffff;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  line-height: 1.2;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Primary Cyan/Blue Gel */
+.glossy-btn--primary {
+  background: var(--btn-primary-grad);
+  color: #ffffff;
+  box-shadow: 
+    0 4px 12px rgba(2, 132, 199, 0.35),
+    0 2px 4px rgba(0, 0, 0, 0.12),
+    inset 0 1px 1px rgba(255, 255, 255, 0.9),
+    inset 0 -2px 4px rgba(3, 105, 161, 0.5);
+  text-shadow: 0 1px 2px rgba(12, 35, 64, 0.5);
+}
+
+.glossy-btn--primary:hover {
+  background: var(--btn-primary-hover-grad);
+  box-shadow: 
+    0 6px 18px rgba(2, 132, 199, 0.45),
+    0 0 15px rgba(56, 189, 248, 0.5),
+    inset 0 1px 1px rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+}
+
+/* Secondary White Glass */
+.glossy-btn--secondary {
+  background: var(--btn-secondary-grad);
+  color: var(--text-main);
+  box-shadow: 
+    0 4px 12px rgba(2, 132, 199, 0.12),
+    0 2px 4px rgba(0, 0, 0, 0.05),
+    inset 0 1px 1px rgba(255, 255, 255, 1),
+    inset 0 -1px 2px rgba(2, 132, 199, 0.1);
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.glossy-btn--secondary:hover {
+  background: linear-gradient(180deg, #ffffff 0%, rgba(224, 242, 254, 0.9) 100%);
+  color: var(--text-highlight);
+  box-shadow: 
+    0 6px 18px rgba(2, 132, 199, 0.2),
+    inset 0 1px 1px rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+}
+
+/* Accent Lime Gel */
+.glossy-btn--accent {
+  background: var(--btn-accent-grad);
+  color: #0c2340;
+  box-shadow: 
+    0 4px 12px rgba(132, 204, 22, 0.35),
+    inset 0 1px 1px rgba(255, 255, 255, 0.9);
+  font-weight: 700;
+}
+
+.glossy-btn--accent:hover {
+  box-shadow: 
+    0 6px 18px rgba(132, 204, 22, 0.45),
+    0 0 15px rgba(163, 230, 53, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Active compression for tactile feedback */
+.glossy-btn:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.25), inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Top Specular Curved Highlight (Skeumorphic gel bubble effect) */
+.glossy-btn::before {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 8%;
+  right: 8%;
+  height: 48%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.12) 100%);
+  border-radius: var(--radius-full);
+  pointer-events: none;
+}
+
+/* Sweeping Light Sheen on Hover */
+.glossy-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.45) 50%, rgba(255, 255, 255, 0) 100%);
+  transform: rotate(25deg);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.glossy-btn:hover::after {
+  opacity: 1;
+  animation: glossySheen 0.8s ease-out forwards;
+}
+
+/* Small size variant */
+.glossy-btn--sm {
+  font-size: 0.85rem;
+  padding: 0.45rem 1rem;
+}
+
+/* ========================================================
+   AERO CHIPS & PILLS
+   ======================================================== */
+.aero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 
+    0 2px 6px rgba(2, 132, 199, 0.08),
+    inset 0 1px 1px rgba(255, 255, 255, 0.9);
+  color: var(--text-main);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.aero-pill--cyan {
+  background: rgba(224, 242, 254, 0.8);
+  border-color: rgba(56, 189, 248, 0.4);
+  color: var(--sky-800);
+}
+
+.aero-pill--green {
+  background: rgba(236, 252, 203, 0.8);
+  border-color: rgba(163, 230, 53, 0.6);
+  color: #365314;
+}
+
+.aero-pill--amber {
+  background: rgba(254, 243, 199, 0.8);
+  border-color: rgba(245, 158, 11, 0.4);
+  color: #78350f;
+}
+
+/* ========================================================
+   RETRO OS GADGET / DESKTOP WIDGET (WINDOWS VISTA / 7 AERO)
+   ======================================================== */
+.aero-gadget {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(224, 242, 254, 0.75) 100%);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-lg);
+  box-shadow: 
+    0 15px 35px rgba(2, 132, 199, 0.16),
+    0 2px 6px rgba(0, 0, 0, 0.04),
+    inset 0 1px 1px rgba(255, 255, 255, 1),
+    inset 0 -1px 2px rgba(2, 132, 199, 0.15);
+  overflow: hidden;
+  position: relative;
+}
+
+.aero-gadget-titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(224, 242, 254, 0.5) 100%);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.aero-gadget-window-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.aero-gadget-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.aero-gadget-dot--cyan {
+  background: linear-gradient(180deg, #7dd3fc 0%, #0284c7 100%);
+}
+
+.aero-gadget-dot--green {
+  background: linear-gradient(180deg, #bef264 0%, #65a30d 100%);
+}
+
+.aero-gadget-dot--amber {
+  background: linear-gradient(180deg, #fde047 0%, #ca8a04 100%);
+}
+
+/* Glowing Pulsing Green LED indicator */
+.aero-led-live {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: #22c55e;
+  box-shadow: 0 0 8px #4ade80, 0 0 14px #22c55e;
+  display: inline-block;
+  animation: ledPulse 2s infinite ease-in-out;
+}
+
+/* ========================================================
+   SECTION DIVIDERS
+   ======================================================== */
+.aero-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(56, 189, 248, 0.6) 50%, rgba(255, 255, 255, 0) 100%);
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.aero-divider::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 3px;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.9) 0%, rgba(56, 189, 248, 0) 80%);
+}

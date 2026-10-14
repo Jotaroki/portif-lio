@@ -1,0 +1,98 @@
+:root {
+  /* ========================================================
+     FRUTIGER AERO PALETTE: Sky, Cyan, Turquoise, Aqua & Lime
+     ======================================================== */
+  --sky-50: #f0f9ff;
+  --sky-100: #e0f2fe;
+  --sky-200: #bae6fd;
+  --sky-300: #7dd3fc;
+  --sky-400: #38bdf8;
+  --sky-500: #0ea5e9;
+  --sky-600: #0284c7;
+  --sky-700: #0369a1;
+  --sky-800: #075985;
+  --sky-900: #0c4a6e;
+  --sky-950: #082f49;
+
+  --cyan-400: #22d3ee;
+  --cyan-500: #06b6d4;
+  --cyan-600: #0891b2;
+
+  --teal-300: #5eead4;
+  --teal-400: #2dd4bf;
+  --teal-500: #14b8a6;
+
+  --lime-300: #bef264;
+  --lime-400: #a3e635;
+  --lime-500: #84cc16;
+
+  --emerald-400: #34d399;
+  --emerald-500: #10b981;
+
+  /* Text & Contrast (WCAG AAA compliant dark slate & navy) */
+  --text-main: #0c2340;
+  --text-secondary: #274060;
+  --text-muted: #526f8d;
+  --text-light: #ffffff;
+  --text-highlight: #0284c7;
+
+  /* ========================================================
+     AERO GLASS SURFACES
+     ======================================================== */
+  --glass-bg-navbar: rgba(255, 255, 255, 0.72);
+  --glass-bg-subtle: rgba(255, 255, 255, 0.55);
+  --glass-bg-card: rgba(255, 255, 255, 0.68);
+  --glass-bg-prominent: rgba(255, 255, 255, 0.82);
+  --glass-bg-tint: rgba(224, 242, 254, 0.7);
+  --glass-bg-widget: rgba(240, 249, 255, 0.85);
+
+  /* Fallback backgrounds for browsers lacking backdrop-filter */
+  --glass-fallback-nav: rgba(240, 249, 255, 0.96);
+  --glass-fallback-card: rgba(248, 252, 255, 0.95);
+
+  /* Glass borders & highlights */
+  --glass-border-light: rgba(255, 255, 255, 0.85);
+  --glass-border-mid: rgba(255, 255, 255, 0.5);
+  --glass-border-glow: rgba(56, 189, 248, 0.45);
+  --glass-border-lime: rgba(163, 230, 53, 0.5);
+
+  /* Glass Inset Specular Reflections */
+  --glass-specular-top: inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.95);
+  --glass-specular-full: inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.95), inset 0 -1px 2px 0 rgba(2, 132, 199, 0.12);
+
+  /* Soft Ambient Aero Shadows */
+  --shadow-sm: 0 4px 12px rgba(2, 132, 199, 0.08);
+  --shadow-md: 0 10px 25px -4px rgba(2, 132, 199, 0.14), 0 4px 10px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 40px -8px rgba(2, 132, 199, 0.18), 0 8px 16px -4px rgba(0, 0, 0, 0.06);
+  --shadow-glow: 0 0 25px rgba(56, 189, 248, 0.4);
+
+  /* ========================================================
+     GLOSSY GEL BUTTON GRADIENTS
+     ======================================================== */
+  --btn-primary-grad: linear-gradient(180deg, #38bdf8 0%, #0284c7 48%, #0369a1 100%);
+  --btn-primary-hover-grad: linear-gradient(180deg, #7dd3fc 0%, #0284c7 48%, #075985 100%);
+  --btn-secondary-grad: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 249, 255, 0.8) 50%, rgba(224, 242, 254, 0.9) 100%);
+  --btn-accent-grad: linear-gradient(180deg, #a3e635 0%, #84cc16 48%, #4d7c0f 100%);
+
+  /* ========================================================
+     TYPOGRAPHY & RADIUS
+     ======================================================== */
+  --font-sans: 'Segoe UI', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', Consolas, 'Courier New', monospace;
+
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  /* Blur settings */
+  --blur-light: 8px;
+  --blur-medium: 14px;
+  --blur-heavy: 20px;
+
+  /* Max widths */
+  --max-width: 1200px;
+  --section-spacing: 5.5rem;
+}
